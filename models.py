@@ -35,3 +35,24 @@ class ProductUpdate(BaseModel):
     category: Optional[str] = None
     tags: Optional[List[str]] = None
     in_stock: Optional[bool] = None
+
+class UserCreate(BaseModel):
+    """Model for creating a new user."""
+    username: str
+    email: str
+    password: str
+
+class User(BaseModel):
+    """Model for a user."""
+    id: int
+    username: str
+    email: str
+    password: str
+    created_at: datetime = datetime.now()
+    updated_at: datetime = datetime.now()
+
+class UserUpdate(BaseModel):
+    """Model for updating an existing user."""
+    username: Optional[str] = None
+    email: Optional[str] = None
+    password: Optional[str] = None
